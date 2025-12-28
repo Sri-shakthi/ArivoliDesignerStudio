@@ -1,4 +1,4 @@
-import { createContext, useContext, ReactNode } from 'react';
+import React, { createContext, useContext, ReactNode } from 'react';
 import Lenis from '@studio-freight/lenis';
 
 interface LenisContextType {
@@ -9,7 +9,12 @@ const LenisContext = createContext<LenisContextType>({ lenis: null });
 
 export const useLenis = () => useContext(LenisContext);
 
-export const LenisProvider = ({ children, lenis }: { children: ReactNode; lenis: Lenis | null }) => {
+interface LenisProviderProps {
+  children: ReactNode;
+  lenis: Lenis | null;
+}
+
+export const LenisProvider: React.FC<LenisProviderProps> = ({ children, lenis }) => {
   return (
     <LenisContext.Provider value={{ lenis }}>
       {children}
