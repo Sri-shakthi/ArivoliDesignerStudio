@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import gsap from 'gsap';
@@ -45,8 +45,9 @@ export function Navigation() {
     }`}>
       <div className="nav-container">
         <Link to="/" className="logo">
-          <span className="logo-text">CREATIVE</span>
-          <span className="logo-accent">STUDIO</span>
+        <img className="logo-img" src="https://ik.imagekit.io/qbnsahjpu/assets/Arivoli/arivoli-logo.jpeg" alt="Logo" />
+          {/* <span className="logo-text">CREATIVE</span>
+          <span className="logo-accent">STUDIO</span> */}
         </Link>
 
         {/* Desktop Menu */}
